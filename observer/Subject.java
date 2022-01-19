@@ -4,6 +4,7 @@
 
 package observer;
 
+// Interface for the subject to implement and the methods it needs to implement 
 public interface Subject 
 {
     public void registerObserver (Observer observer);
