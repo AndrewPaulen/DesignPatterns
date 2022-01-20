@@ -1,33 +1,36 @@
-/*
- * Written by Andrew Paulen
- */ 
-
 package observer;
 import java.util.HashMap;
 import java.text.DecimalFormat;
 
-// Class implements Observer class
+/**
+ * Display the perentage of votes for the poll
+ * Implements Observer
+ * @author Andrew Paulen
+ */
 public class PercentageDisplay implements Observer
 {
-    // Attributes
     private Subject poll;
     private HashMap <String, Integer> votes;
     private int numVotes;
 
-    // Constructor
+    /**
+     * Creates an observer of the poll
+     * @param poll The name of the poll subject
+     */
     public PercentageDisplay (Subject poll)
     {
         this.poll = poll;
         poll.registerObserver (this);
     }
 
-    // Methods
-    // Method to update the stored results, then calls to display the results
+    /**
+     * Updates the percentage display oberver with the poll results
+     * @param votes The results of the poll
+     */
     public void update (HashMap <String, Integer> votes)
     {
         this.votes = votes;
         
-        // Updates the total number of votes 
         for (String name : votes.keySet())
         {
             int temp = votes.get (name);
@@ -37,7 +40,9 @@ public class PercentageDisplay implements Observer
         display();
     }
 
-    // Method to display the results
+    /**
+     * Calculates and displays the percentage of votes for each candidate 
+     */
     private void display()
     {
         System.out.println ("\nCurrent Percent of Votes:");

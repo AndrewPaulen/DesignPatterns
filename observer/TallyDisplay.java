@@ -1,38 +1,43 @@
-/*
- * Written by Andrew Paulen
- */
-
 package observer;
 import java.util.HashMap;
 
-// Class implements class Observer
+/**
+ * Display the total number of votes for the poll
+ * Implements Observer
+ * @author Andrew Paulen
+ */
 public class TallyDisplay implements Observer
 {
-    // Attributes
     private Subject poll;
     private HashMap <String, Integer> votes;
 
-    // Constructor
+    /**
+     * Creates an observer of the poll
+     * @param poll The name of the poll subject
+     */
     public TallyDisplay (Subject poll)
     {
         this.poll = poll;
         poll.registerObserver (this);
     }
 
-    // Methods
-    // Method to update the stored results, the calls to display results
+    /**
+     * Updates the tally display observer with the results
+     * @param votes The results of the poll
+     */
     public void update (HashMap <String, Integer> votes)
     {
         this.votes = votes;
         display();
     }
 
-    // Method to display the results
+    /**
+     * Displays the total number of votes for each candidate
+     */
     private void display()
     {
         System.out.println ("\nCurrent Tallies:");
 
-        // For every name in the HashMap prints name and number of votes
         for (String name : votes.keySet())
         {
             String numVotes = votes.get (name).toString();

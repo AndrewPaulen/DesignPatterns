@@ -1,10 +1,9 @@
-/*
- * Written by Andrew Paulen
- */
-
 package observer;
 
-// Interface for the subject to implement and the methods it needs to implement 
+/**
+ * Establishes the methods that need to be implemented within the subject
+ * @author Andrew Paulen
+ */
 public interface Subject 
 {
     public void registerObserver (Observer observer);
