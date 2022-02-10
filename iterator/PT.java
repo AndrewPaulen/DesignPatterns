@@ -11,6 +11,8 @@ public class PT
     private String lastName;
     private String bio;
     private Exercise [] exercises;
+    private int numExercises;
+    private int i;
 
     /**
      * Creates a PT with passed first and last name and bio, establishes the array of exercises 
@@ -24,6 +26,7 @@ public class PT
         this.lastName = lastName;
         this.bio = bio;
         exercises = new Exercise [2];
+        numExercises = 0;
     }
 
     /**
@@ -51,6 +54,8 @@ public class PT
             if (slot == exercises.length - 1 && exercises [slot] != null)
                 exercises = growArray (exercises);
         }
+
+        numExercises++;
     }
 
     /**
