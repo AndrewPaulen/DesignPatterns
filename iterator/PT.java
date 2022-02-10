@@ -12,7 +12,6 @@ public class PT
     private String bio;
     private Exercise [] exercises;
     private int numExercises;
-    private int i;
 
     /**
      * Creates a PT with passed first and last name and bio, establishes the array of exercises 
