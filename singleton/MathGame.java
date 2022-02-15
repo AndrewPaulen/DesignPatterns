@@ -1,8 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
-
 /**
  * A Math Game
  * @author Andrew Paulen
